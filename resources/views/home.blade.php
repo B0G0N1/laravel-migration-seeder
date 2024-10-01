@@ -1,13 +1,14 @@
 @extends('layouts.app')
-{{-- Estende il layout principale chiamato "app" --}}
+{{-- Estende il layout principale "app" --}}
 
 @section('content')
-    {{-- Sezione che definisce il contenuto della pagina --}}
+    {{-- Sezione del contenuto della pagina --}}
     <div class="container">
         {{-- Contenitore principale --}}
         <div class="row">
             <div class="col-md-12">
-                <table class="table table-hover table-striped my-4">
+                {{-- Tabella dei treni con stili Bootstrap --}}
+                <table class="table table-hover table-striped my-5">
                     <thead class="thead-dark">
                         <tr>
                             <th>ID</th>
@@ -24,7 +25,7 @@
                     </thead>
                     <tbody>
                         @foreach ($trains as $train)
-                            {{-- Condizione per colorare la riga se il treno è stato cancellato --}}
+                            {{-- Evidenzia la riga se il treno è cancellato --}}
                             <tr @if ($train->cancelled) style="background-color: #f8d7da;" @endif>
                                 <td>{{ $train->id }}</td>
                                 <td>{{ $train->company }}</td>
@@ -40,7 +41,9 @@
                         @endforeach
                     </tbody>
                 </table>
+                {{-- Fine della tabella dei treni --}}
             </div>
         </div>
     </div>
 @endsection
+{{-- Fine della sezione contenuto --}}

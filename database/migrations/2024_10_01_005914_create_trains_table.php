@@ -13,8 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
+        // Crea la tabella 'trains' con i campi necessari
         Schema::create('trains', function (Blueprint $table) {
-            $table->id();
+            $table->id(); // Chiave primaria auto-incrementante
             $table->string('company');
             $table->string('departure_station');
             $table->string('arrival_station');
@@ -24,7 +25,7 @@ return new class extends Migration
             $table->integer('number_of_carriages');
             $table->boolean('on_time')->default(true);
             $table->boolean('cancelled')->default(false);
-            $table->timestamps();
+            $table->timestamps(); // Timestamp per 'created_at' e 'updated_at'
         });
     }    
 
@@ -35,6 +36,7 @@ return new class extends Migration
      */
     public function down()
     {
+        // Elimina la tabella 'trains' se esiste
         Schema::dropIfExists('trains');
     }
 };
