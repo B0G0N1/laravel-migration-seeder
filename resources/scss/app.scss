@@ -1,3 +1,18 @@
 @import '~bootstrap/scss/bootstrap';
 
 @import '@fortawesome/fontawesome-free/css/all.css';
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #0c7cec;
+
+    h1 {
+        color: white;
+    }
+}
